@@ -1,84 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220314 22:36:43.269" rpa="false" schemaversion="2">
-<suite id="s1" name="usandoLogs" source="C:\Projeto\RobotFrameWork\WebTesting\usandoLogs.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220314 23:06:53.281" rpa="false" schemaversion="2">
+<suite id="s1" name="usandoIfs" source="C:\Projeto\RobotFrameWork\WebTesting\usandoIfs.robot">
 <test id="s1-t1" name="Caso de Teste 1">
-<kw name="usando log simples">
+<kw name="teste verdadeiro">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${Carros[0]}' == 'chevette'</arg>
+<arg>Log</arg>
+<arg>O primeiro carro foi um chevette.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <kw name="Log" library="BuiltIn">
-<arg>${Variavel_Global_simples}</arg>
+<arg>O primeiro carro foi um chevette.</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220314 22:36:43.458" level="INFO">Lista de carros que já passaram pela garagem</msg>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:43.458"/>
+<msg timestamp="20220314 23:06:53.312" level="INFO">O primeiro carro foi um chevette.</msg>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
 </kw>
-<kw name="Set Variable" library="BuiltIn">
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
+</kw>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
+</kw>
+<kw name="teste falso">
+<kw name="Run Keyword Unless" library="BuiltIn">
+<arg>'${Carros[9]}' == 'blazer'</arg>
+<arg>Log</arg>
+<arg>O ultimo carro foi uma tracker.</arg>
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>O ultimo carro foi uma tracker.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220314 23:06:53.312" level="INFO">O ultimo carro foi uma tracker.</msg>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
+</kw>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
+</kw>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
+</kw>
+<kw name="armazenando valor se condicao atendida">
+<kw name="Set Variable If" library="BuiltIn">
 <var>${VAR}</var>
-<arg>cambio na coluna de direção.</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220314 22:36:43.458" level="INFO">${VAR} = cambio na coluna de direção.</msg>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:43.458"/>
+<arg>'${Carros[1]}' == 'corsa'</arg>
+<arg>corsa</arg>
+<doc>Sets variable based on the given condition.</doc>
+<msg timestamp="20220314 23:06:53.312" level="INFO">${VAR} = corsa</msg>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>O proximo carro será da marca ${Carro_Desejado.marca} e será o modelo ${Carro_Desejado.modelo} com ${VAR}.</arg>
+<arg>O segundo carro foi um ${VAR}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220314 22:36:43.458" level="INFO">O proximo carro será da marca Dodge e será o modelo Dakota Sport com cambio na coluna de direção..</msg>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:43.458"/>
+<msg timestamp="20220314 23:06:53.312" level="INFO">O segundo carro foi um corsa</msg>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
 </kw>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:43.458"/>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
 </kw>
-<kw name="usando log no console">
-<kw name="Log To Console" library="BuiltIn">
-<arg>As minas piram em uma picape</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:43.458"/>
-</kw>
-<kw name="Log Many" library="BuiltIn">
-<arg>Essa é lista de carros que eu já tive:</arg>
-<arg>@{Carros}</arg>
-<doc>Logs the given messages as separate entries using the INFO level.</doc>
-<msg timestamp="20220314 22:36:43.458" level="INFO">Essa é lista de carros que eu já tive:</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">chevette</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">corsa</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">gol</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">monza</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">omega gls</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">omega cd</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">celta</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">fiesta</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">blazer</msg>
-<msg timestamp="20220314 22:36:43.458" level="INFO">tracker</msg>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:43.458"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${Carro_Desejado.modelo} - ${Carro_Desejado.transmissao}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220314 22:36:43.474" level="INFO">Dakota Sport - automática</msg>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:43.474"/>
-</kw>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:43.474"/>
-</kw>
-<kw name="capturando tela para log">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.google.com/search?q=dodge+dakota+sport+3.9+v6&amp;rlz=1C1CHZN_pt-BRBR983BR983&amp;sxsrf=APq-WBuTebz1xqm2gAbEy0hsOVGToerLlQ:1647307416889&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwjekq2r-sb2AhWKqpUCHQhyBRYQ_AUoAnoECAEQBA&amp;biw=1366&amp;bih=617&amp;dpr=1#imgrc=0tS-MZTuXduk0M</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220314 22:36:43.474" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/search?q=dodge+dakota+sport+3.9+v6&amp;rlz=1C1CHZN_pt-BRBR983BR983&amp;sxsrf=APq-WBuTebz1xqm2gAbEy0hsOVGToerLlQ:1647307416889&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwjekq2r-sb2AhWKqpUCHQhyBRYQ_AUoAnoECAEQBA&amp;biw=1366&amp;bih=617&amp;dpr=1#imgrc=0tS-MZTuXduk0M'.</msg>
-<status status="PASS" starttime="20220314 22:36:43.474" endtime="20220314 22:36:47.361"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>carro_desejado.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220314 22:36:47.694" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="carro_desejado.png"&gt;&lt;img src="carro_desejado.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220314 22:36:47.361" endtime="20220314 22:36:47.694"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220314 22:36:47.694" endtime="20220314 22:36:49.875"/>
-</kw>
-<status status="PASS" starttime="20220314 22:36:43.474" endtime="20220314 22:36:49.876"/>
-</kw>
-<status status="PASS" starttime="20220314 22:36:43.458" endtime="20220314 22:36:49.877"/>
+<status status="PASS" starttime="20220314 23:06:53.312" endtime="20220314 23:06:53.312"/>
 </test>
-<doc>Esse programa mostra como usar logs de diferentes formas.</doc>
-<status status="PASS" starttime="20220314 22:36:43.269" endtime="20220314 22:36:49.877"/>
+<doc>Usando ifs no robot framework</doc>
+<status status="PASS" starttime="20220314 23:06:53.281" endtime="20220314 23:06:53.312"/>
 </suite>
 <statistics>
 <total>
@@ -87,7 +63,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="usandoLogs">usandoLogs</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="usandoIfs">usandoIfs</stat>
 </suite>
 </statistics>
 <errors>
