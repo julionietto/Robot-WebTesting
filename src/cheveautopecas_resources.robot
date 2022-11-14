@@ -14,14 +14,17 @@ ${PRODUTO_CONF}     //img[contains(@alt,'Bomba Direção Hidráulica - Onix/Pris
 
 Abrir o navegador
     Open BROWSER    browser=${BROWSER}
+    Sleep    5
     Maximize Browser Window
 
 Acessar a home do site cheveautopecas.com.br
     Go To    url=${URL}
     Wait Until Element Is Visible    locator=${VARIAVEL_MENU}
+    Sleep    5
 
 Entrar no menu motor
     Click Element    locator=${VARIAVEL_MENU}
+    Sleep    5
 
 Verificar se aparece o titulo "MOTOR" no cabeçalho da categoria
     Wait Until Page Contains    ${PALAVRA_MOTOR}
@@ -31,11 +34,13 @@ Verificar se o titulo da pagina é "${TITULO_PAGINA}"
         
 Digitar o nome do produto "${PRODUTO}" no campo de Pesquisa
     Input Text    locator=${CAMPO_BUSCAR}    text=${PRODUTO}
+    Sleep    5
 
 Clicar no botão de Pesquisa
     Click Button    locator=${BOTAO_BUSCAR}
 Verificar o resultado da pesquisa se está listando o produto pesquisado
     Element Should Be Visible    locator=${PRODUTO_CONF}
+    Sleep    5
 
 Fechar o navegador
     Capture Page Screenshot
