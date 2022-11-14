@@ -1,6 +1,5 @@
 *** Settings ***
 Documentation      Essa switch de testes testa o site da CheveAutopecas
-
 Resource           cheveautopecas_resources.robot
 
 Test Setup         Abrir o navegador
