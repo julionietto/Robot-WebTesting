@@ -7,7 +7,7 @@ Task Teardown      Fechar o navegador
 
 *** Test Cases ***
 
-Caso de Teste 01 - Acesso a home CheveAutopecas
+Teste 01
     [Documentation]    Esse teste verifica se a home do site está online
     ...                e verifica se a categoria de produtos está disponível
     [Tags]             menus
@@ -17,7 +17,7 @@ Caso de Teste 01 - Acesso a home CheveAutopecas
     Verificar se o titulo da pagina é "[motor] [cheve] [cheveautopeças] [chevrolet]"
 
 
-Caso de Teste 02 - Pesquisa de produto
+Teste 02
     [Documentation]    Esse teste verifica se o produto está sendo retornado após pesquisa digitada
     [Tags]             buscas
     Acessar a home do site cheveautopecas.com.br
