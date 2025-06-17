@@ -1,36 +1,32 @@
 *** Settings ***
-Documentation        Esse programa mostra como usar logs de diferentes formas.
-Library    SeleniumLibrary
+Documentation   Suíte de exmeplo didático para exemplificar o uso de LOGs nos testes
+...             Os LOGs são de grande utilidade, faça LOGs para analisar como seu teste está sendo executado nas entrelinhas
+...             Os LOGs te ajudam a achar falhas na automação dos seus testes
+...             Use LOGs sem moderação!!
+Library         SeleniumLibrary
 
-*** Variables ***
-${Variavel_Global_simples}    Lista de carros que já passaram pela garagem
+*** Variable ***
+@{FRUTAS}   maça  banana  uva  abacaxi
 
-@{Carros}    chevette    corsa    gol    monza    omega gls    omega cd    celta    fiesta    blazer    tracker
-
-&{Carro_Desejado}    modelo=Dakota Sport    marca=Dodge    motor=3.9    potencia=177    torque=31 mkgf    combustivel=gasolina    transmissao=automática
-
-*** Test Cases ***
-Caso de Teste 1
-    usando log simples
-    usando log no console
-    capturando tela para log
-
+*** Test Case ***
+Caso de teste exemplo 01
+    Usando LOG para mensagens
+    Usando LOG Console
+    Usando screen shots
 
 *** Keywords ***
-usando log simples
-    Log    ${Variavel_Global_simples}
-    ${VAR}    Set Variable    cambio na coluna de direção.
-    Log    O proximo carro será da marca ${Carro_Desejado.marca} e será o modelo ${Carro_Desejado.modelo} com ${VAR}.
+Usando LOG para mensagens
+    Log     Minha mensagem de LOG
+    ${VAR}  Set Variable    variável qualquer
+    Log     Posso logar uma ${VAR} no meio de um log
 
-usando log no console
-    Log To Console    As minas piram em uma picape
-    Log Many          Essa é lista de carros que eu já tive:     @{Carros}
-    Log               ${Carro_Desejado.modelo} - ${Carro_Desejado.transmissao}
+Usando LOG Console
+    Log To Console      Posso logar na saída do console
+    Log Many            Posso logar minha lista completa @{FRUTAS}
+    Log                 Posso logar somente itens da minha lista ${FRUTAS[0]} - ${FRUTAS[1]}
 
-
-capturando tela para log
-    Open Browser    https://www.google.com/search?q=dodge+dakota+sport+3.9+v6&rlz=1C1CHZN_pt-BRBR983BR983&sxsrf=APq-WBuTebz1xqm2gAbEy0hsOVGToerLlQ:1647307416889&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjekq2r-sb2AhWKqpUCHQhyBRYQ_AUoAnoECAEQBA&biw=1366&bih=617&dpr=1#imgrc=0tS-MZTuXduk0M    chrome
-    Capture Page Screenshot    carro_desejado.png
+Usando screen shots
+    Log     Nos testes web, podemos logar Screenshot com a SeleniumLibrary
+    Open Browser    http://www.robotizandotestes.blogspot.com.br    chrome
+    Capture Page Screenshot      nome_do_meuscreenshot.png
     Close Browser
-
- 

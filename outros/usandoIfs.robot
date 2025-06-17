@@ -2,8 +2,7 @@
 Documentation    Usando ifs no robot framework
 
 *** Variables ***
-@{Carros}    chevette    corsa    gol    monza    omega gls    omega cd    celta    fiesta    blazer    tracker
-
+@{Carros}    chevette    corsa    gol    monza    omega gls    omega cd    celta    fiesta    blazer    tracker    astra    grand cherokee
 
 *** Test Cases ***
 

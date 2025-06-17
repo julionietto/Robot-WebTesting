@@ -2,11 +2,11 @@
 Documentation        Esse programa mostra tipos de variaveis diferentes para serem usadas
 
 *** Variables ***
-${Variavel_Global_simples}    Lista de carros que já passaram pela garagem
+${Variavel_Global_simples}    Lista de carros que ja passaram pela garagem
 
-@{Carros}    chevette    corsa    gol    monza    omega gls    omega cd    celta    fiesta    blazer    tracker
+@{Carros}    chevette    corsa    gol    monza    omega gls    omega cd    celta    fiesta    blazer    tracker  astra  Grand Cherokee
 
-&{Carro_Desejado}    modelo=Dakota Sport    marca=Dodge    motor=3.9    potencia=177    torque=31 mkgf    combustivel=gasolina    transmissao=automática
+&{Carro_Desejado}    modelo=Dakota R/T    marca=Dodge    motor=5.2    potencia=220    torque=39 mkgf    combustivel=gasolina    transmissao=automatica
 
 *** Test Cases ***
 Caso de Teste 1

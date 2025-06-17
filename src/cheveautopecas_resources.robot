@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}              https://www.cheveautopecas.com.br/
-${BROWSER}          chrome
+${BROWSER}          edge
 ${VARIAVEL_MENU}    //a[contains(.,'MOTOR')]
 ${PALAVRA_MOTOR}    MOTOR
 ${CAMPO_BUSCAR}     (//input[@placeholder='Buscar'])[1]
